@@ -33,4 +33,4 @@ function findSmallestRepeatingPattern(str) {
   return str // Return the original string if no repeating pattern is found
 }
 
-console.log(gcdOfStrings('ababababab', 'ababab'))
+console.log(gcdOfStrings('abababab', 'ababab'))
