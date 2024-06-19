@@ -39,6 +39,18 @@ nums2.length == n
 
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 """
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+m, n = 3, 3
+
 
 def merge(nums1, m, nums2, n):
-  print()
+  if n == 0: 
+    pass
+  else:
+    for i in range(m, m+n):
+      nums1[i] = nums2[i-m]
+  nums1[:] = sorted(nums1)
+
+merge(nums1, m, nums2, n)
+print(nums1)
