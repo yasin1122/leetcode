@@ -46,8 +46,19 @@ Constraints:
 0 <= nums[i] <= 50
 0 <= val <= 100
 """
+nums = [0,1,2,2,3,0,4,2]
+val = 2
 
 def removeElement(nums, val):
   counter = 0
 
+  # count non val elements, if val remove it
+  for i in range(len(nums)):
+    if nums[i] != val:
+      counter += 1
+    elif nums[i] == val:
+      nums[i] = '_'
+
   return counter
+
+print(removeElement(nums, val), nums) #testing
