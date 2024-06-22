@@ -61,4 +61,4 @@ def removeElement(nums, val):
 
   return counter
 
-print(removeElement(nums, val), nums) #testing
+print(removeElement(nums, val), nums) 
