@@ -55,9 +55,8 @@ def removeElement(nums, val):
   # count non val elements, if val remove it
   for i in range(len(nums)):
     if nums[i] != val:
+      nums[counter] = nums[i]
       counter += 1
-    elif nums[i] == val:
-      nums[i] = '_'
 
   return counter
 
