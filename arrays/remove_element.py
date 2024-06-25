@@ -58,6 +58,8 @@ def removeElement(nums, val):
       nums[counter] = nums[i]
       counter += 1
 
+  # This isn't working needs fixing
+
   return counter
 
 print(removeElement(nums, val), nums) 
