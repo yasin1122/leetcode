@@ -59,6 +59,7 @@ def removeElement(nums, val):
       counter += 1
 
   # This isn't working needs fixing
+  # brainstorm
 
   return counter
 
