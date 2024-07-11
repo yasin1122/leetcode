@@ -1,3 +1,4 @@
+"""
 def append(self, value):
     # Create a new node with the given value
     new_node = Node(value)
@@ -15,3 +16,4 @@ def append(self, value):
  
     # Increment the length of the linked list
     self.length += 1
+"""
