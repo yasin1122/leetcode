@@ -1,24 +1,53 @@
-def pop(self):
-    # Check if the list is empty
-    if self.length == 0:
-        return None
-    # Initialize temp and pre to the head
-    temp = self.head
-    pre = self.head
-    # Iterate until the last node
-    while(temp.next):
-        pre = temp
-        temp = temp.next
-    # Set the new tail to the previous node
-    self.tail = pre
-    # Remove link to the removed node
-    self.tail.next = None
-    # Decrement list length by 1
-    self.length -= 1
-    # Check if the list is now empty
-    if self.length == 0:
-        # Set head and tail to None
-        self.head = None
-        self.tail = None
-    # Return the removed node
-    return temp
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+
+    def print_list(self):
+        values = []
+        temp = self.head
+        while temp is not None:
+            values.append(str(temp.value))
+            temp = temp.next
+        values.append("None")
+        print(" -> ".join(values))
+        
+    def append(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+        return True
+
+    def pop(self):
+        if self.length == 0:
+            return None
+            
+        temp = self.head
+        pre = self.head
+        
+        while(temp.next):
+            pre = temp
+            temp = temp.next
+            
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1 
+        
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+        
+        return temp
