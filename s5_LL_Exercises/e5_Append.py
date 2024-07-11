@@ -1,19 +1,35 @@
-"""
-def append(self, value):
-    # Create a new node with the given value
-    new_node = Node(value)
- 
-    # Check to see if the linked list is empty
-    if self.head is None:
-        # Point both head and tail at the new node
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
         self.head = new_node
         self.tail = new_node
-    else:
-        # Point the next pointer of the last node at the new node
-        self.tail.next = new_node
-        # Point tail at the new node
-        self.tail = new_node
- 
-    # Increment the length of the linked list
-    self.length += 1
-"""
+        self.length = 1
+
+    def print_list(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+            
+    def make_empty(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+        
+    def append(self, value):
+        new_node = Node(value)
+        
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        
+        self.length += 1
