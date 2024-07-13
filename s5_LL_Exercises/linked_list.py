@@ -1,1 +1,1 @@
-# self implementation
+# Implement Node and Linked List classes
